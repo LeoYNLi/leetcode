@@ -13,4 +13,12 @@ public class TeatE26 {
         assertEquals(5, k);
     }
 
+    @Test
+    void testE26_case2() {
+        Easy26 inst = new Easy26();
+        int[] nums = { 1, 1, 2 };
+        int k = inst.removeDuplicates(nums);
+        assertEquals(2, k);
+    }
+
 }
