@@ -30,4 +30,11 @@ public class TestE169 {
         assertEquals(3, k);
     }
 
+    @Test
+    void case4() {
+        Easy169 inst = new Easy169();
+        int[] nums = { 1, 3, 1, 1, 4, 1, 1, 5, 1, 1, 6, 2, 2 };
+        int k = inst.majorityElement(nums);
+        assertEquals(1, k);
+    }
 }
