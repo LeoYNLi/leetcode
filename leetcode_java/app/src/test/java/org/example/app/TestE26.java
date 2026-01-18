@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class TeatE26 {
+public class TestE26 {
     @Test
     void testE26_case1() {
         Easy26 inst = new Easy26();
