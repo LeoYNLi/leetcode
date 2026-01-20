@@ -28,4 +28,12 @@ public class TestM122 {
         int k = inst.maxProfit(prices);
         assertEquals(0, k);
     }
+
+    @Test
+    void case4() {
+        Medium122 inst = new Medium122();
+        int[] prices = { 1,2 };
+        int k = inst.maxProfit(prices);
+        assertEquals(1, k);
+    }
 }
