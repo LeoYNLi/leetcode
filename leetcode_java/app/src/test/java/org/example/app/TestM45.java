@@ -27,7 +27,7 @@ public class TestM45 {
         Medium45 inst = new Medium45();
         int[] nums = {0};
         int k = inst.jump(nums);
-        assertEquals(1, k);
+        assertEquals(0, k);
     }
 
     @Test
