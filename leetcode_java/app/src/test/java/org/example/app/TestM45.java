@@ -45,4 +45,12 @@ public class TestM45 {
         int k = inst.jump(nums);
         assertEquals(2, k);
     }
+
+    @Test
+    void case6() {
+        Medium45 inst = new Medium45();
+        int[] nums = {3,4,3,2,5,4,3};
+        int k = inst.jump(nums);
+        assertEquals(3, k);
+    }
 }
