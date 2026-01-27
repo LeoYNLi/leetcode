@@ -20,5 +20,13 @@ public class TestH42 {
         int k = inst.trap(height);
         assertEquals(9, k);
     }
+
+    @Test
+    void case3() {
+        int[] height = {0,1,2,0};
+        Hard42 inst = new Hard42();
+        int k = inst.trap(height);
+        assertEquals(0, k);
+    }
     
 }
