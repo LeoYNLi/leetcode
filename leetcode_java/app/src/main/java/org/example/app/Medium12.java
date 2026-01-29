@@ -4,36 +4,12 @@ import java.util.HashMap;
 
 public class Medium12 {
     public String intToRoman(int num) {
-        StringBuffer res = new StringBuffer();
-        HashMap<Integer, String> hm = new HashMap<>();
-        hm.put(1, "I");
-        hm.put(5, "V");
-        hm.put(10, "X");
-        hm.put(50, "L");
-        hm.put(100, "C");
-        hm.put(500, "D");
-        hm.put(1000, "M");
-        Integer numClass = Integer.valueOf(num);
-        String numsString = numClass.toString();
-        int[] intArr = new int[numsString.length()];
+        final int[] values = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+        final String[] symbols = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
 
-        for (int i = 0; i < numsString.length(); i++) {
-            String s = String.valueOf(numsString.charAt(i));
-            intArr[i] = Integer.parseInt(s);
-        }
+        StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < intArr.length; i++) {
-            int real = intArr[i] * (int) Math.pow(10, intArr.length - 1 - i);
-            if (i < 3) {
-                int key = real / intArr[i];
-                for (int j = 0; j < intArr[i]; j++) {
-                    res.append(hm.get(key));
-                }
-            }
-        }
-
-        return res.toString();
-
+        return sb.toString();
     }
 
 }
