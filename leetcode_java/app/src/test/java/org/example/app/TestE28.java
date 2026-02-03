@@ -31,4 +31,13 @@ public class TestE28 {
         int k = inst.strStr(haystack, needle);
         assertEquals(0, k);
     }
+
+    @Test
+    void case4() {
+        String haystack = "hello";
+        String needle = "ll";
+        Easy28 inst = new Easy28();
+        int k = inst.strStr(haystack, needle);
+        assertEquals(2, k);
+    }
 }
