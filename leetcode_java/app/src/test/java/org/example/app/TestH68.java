@@ -41,4 +41,18 @@ public class TestH68 {
                 "everything  else  we",
                 "do                  "), res);
     }
+
+    @Test
+    void case4() {
+        String[] words = { "Listen", "to", "many,", "speak", "to", "a", "few." };
+        Hard68 inst = new Hard68();
+        List<String> res = inst.fullJustify(words, 6);
+        assertEquals(List.of("Science  is  what we",
+                "understand      well",
+                "enough to explain to",
+                "a  computer.  Art is",
+                "everything  else  we",
+                "do                  "), res);
+    }
+
 }
