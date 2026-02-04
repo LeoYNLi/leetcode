@@ -1,6 +1,5 @@
 package org.example.app;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
@@ -47,12 +46,13 @@ public class TestH68 {
         String[] words = { "Listen", "to", "many,", "speak", "to", "a", "few." };
         Hard68 inst = new Hard68();
         List<String> res = inst.fullJustify(words, 6);
-        assertEquals(List.of("Science  is  what we",
-                "understand      well",
-                "enough to explain to",
-                "a  computer.  Art is",
-                "everything  else  we",
-                "do                  "), res);
+        assertEquals(List.of(
+                "Listen",
+                "to    ",
+                "many, ",
+                "speak ",
+                "to   a",
+                "few.  "), res);
     }
 
 }
