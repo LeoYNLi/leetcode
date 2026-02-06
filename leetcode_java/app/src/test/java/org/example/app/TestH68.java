@@ -33,7 +33,8 @@ public class TestH68 {
                 "computer.", "Art", "is", "everything", "else", "we", "do" };
         Hard68 inst = new Hard68();
         List<String> res = inst.fullJustify(words, 20);
-        assertEquals(List.of("Science  is  what we",
+        assertEquals(List.of(
+                "Science  is  what we",
                 "understand      well",
                 "enough to explain to",
                 "a  computer.  Art is",
@@ -53,6 +54,17 @@ public class TestH68 {
                 "speak ",
                 "to   a",
                 "few.  "), res);
+    }
+
+    @Test
+    void case5() {
+        String[] words = { "ask", "not", "what", "your", "country", "can", "do", "for", "you", "ask", "what", "you",
+                "can", "do", "for", "your", "country" };
+        Hard68 inst = new Hard68();
+        List<String> res = inst.fullJustify(words, 16);
+        assertEquals(List.of(
+                "ask   not   what", "your country can", "do  for  you ask", "what  you can do", "for your country"),
+                res);
     }
 
 }
