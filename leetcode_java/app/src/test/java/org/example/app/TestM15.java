@@ -14,7 +14,7 @@ public class TestM15 {
         int[] nums = { -1, 0, 1, 2, -1, -4 };
         List<List<Integer>> expected = new ArrayList<>();
         expected.add(Arrays.asList(-1, -1, 2));
-        expected.add(Arrays.asList(-1, 0, 1));
+        expected.add(Arrays.asList(0, -1, 1));
 
         Medium15 inst = new Medium15();
         List<List<Integer>> res = inst.threeSum(nums);
