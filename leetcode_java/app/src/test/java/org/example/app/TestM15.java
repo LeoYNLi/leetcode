@@ -14,7 +14,7 @@ public class TestM15 {
         int[] nums = { -1, 0, 1, 2, -1, -4 };
         List<List<Integer>> expected = new ArrayList<>();
         expected.add(Arrays.asList(-1, -1, 2));
-        expected.add(Arrays.asList(0, -1, 1));
+        expected.add(Arrays.asList(-1, 0, 1));
 
         Medium15 inst = new Medium15();
         List<List<Integer>> res = inst.threeSum(nums);
@@ -39,6 +39,19 @@ public class TestM15 {
         int[] nums = { 0, 0, 0 };
         List<List<Integer>> expected = new ArrayList<>();
         expected.add(Arrays.asList(0, 0, 0));
+
+        Medium15 inst = new Medium15();
+        List<List<Integer>> res = inst.threeSum(nums);
+        assertEquals(expected, res);
+
+    }
+
+    @Test
+    void case4() {
+        int[] nums = { -100, -70, -60, 110, 120, 130, 160 };
+        List<List<Integer>> expected = new ArrayList<>();
+        expected.add(Arrays.asList(-100, -60, 160));
+        expected.add(Arrays.asList(-70, -60, 130));
 
         Medium15 inst = new Medium15();
         List<List<Integer>> res = inst.threeSum(nums);
