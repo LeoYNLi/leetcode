@@ -23,4 +23,13 @@ public class TestM209 {
         assertEquals(8, k);
     }
 
+    @Test
+    void case3() {
+        int target = 11;
+        int[] nums = { 1, 1, 1, 1, 1, 1, 1, 1 };
+        Medium209 inst = new Medium209();
+        int k = inst.minSubArrayLen(target, nums);
+        assertEquals(0, k);
+    }
+
 }
