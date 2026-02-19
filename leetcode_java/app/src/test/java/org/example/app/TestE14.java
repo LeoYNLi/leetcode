@@ -44,4 +44,12 @@ public class TestE14 {
         String res = inst.longestCommonPrefix(strs);
         assertEquals("", res);
     }
+
+    @Test
+    void case6() {
+        String[] strs = { "aaa", "aa", "aaa" };
+        Easy14 inst = new Easy14();
+        String res = inst.longestCommonPrefix(strs);
+        assertEquals("aa", res);
+    }
 }
