@@ -63,4 +63,17 @@ public class TestH30 {
         assertEquals(expected, res);
 
     }
+
+    @Test
+    void case5() {
+        String s = "wordgoodgoodgoodbestword";
+        String[] words = { "word", "good", "best", "good" };
+        Hard30 inst = new Hard30();
+        List<Integer> res = inst.findSubstring(s, words);
+        List<Integer> expected = new ArrayList<>();
+        expected.add(8);
+
+        assertEquals(expected, res);
+
+    }
 }
