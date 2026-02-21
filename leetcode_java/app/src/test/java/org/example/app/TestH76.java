@@ -13,4 +13,22 @@ public class TestH76 {
         String res = inst.minWindow(s, t);
         assertEquals("BANC", res);
     }
+
+    @Test
+    void case2() {
+        String s = "a";
+        String t = "aa";
+        Hard76 inst = new Hard76();
+        String res = inst.minWindow(s, t);
+        assertEquals("", res);
+    }
+
+    @Test
+    void case3() {
+        String s = "a";
+        String t = "b";
+        Hard76 inst = new Hard76();
+        String res = inst.minWindow(s, t);
+        assertEquals("", res);
+    }
 }
