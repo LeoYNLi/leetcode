@@ -1,0 +1,3 @@
+Hard42
+Medium134
+Medium274
