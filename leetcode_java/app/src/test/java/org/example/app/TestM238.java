@@ -1,6 +1,8 @@
 package org.example.app;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import org.example.app.arrayOrString.Medium238;
 import org.junit.jupiter.api.Test;
 
 public class TestM238 {

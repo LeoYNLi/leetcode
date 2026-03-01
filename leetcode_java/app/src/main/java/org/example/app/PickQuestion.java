@@ -5,57 +5,65 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class PickQuestion {
 
     private String relativeOrAbsoluteDir = "leetcode_java/app/src/main/java/org/example/app";
 
-    public List<String> pickQuestion(int k) {
-        List<String> files = this.findAllFilenamesUnderCwd(relativeOrAbsoluteDir);
-        List<String> unique = new ArrayList<>(new LinkedHashSet<>(files));
-        int n = unique.size();
-        Random rnd = ThreadLocalRandom.current();
-        Set<Integer> idx = new HashSet<>(5 * 2);
-        while (idx.size() < k) {
-            idx.add(rnd.nextInt(n));
-        }
-
-        List<String> out = new ArrayList<>(k);
-        for (int i : idx) {
-            out.add(unique.get(i));
-            System.out.println(unique.get(i));
-        }
-        return out;
-    }
-
-    public List<String> findAllFilenamesUnderCwd(String targetPath) {
+    public Map<String, List<String>> pickQuestion() {
         Path root = Paths.get(relativeOrAbsoluteDir).toAbsolutePath().normalize();
 
-        if (!Files.exists(root)) {
-            throw new IllegalArgumentException("Path does not exist: " + root);
-        }
-        if (!Files.isDirectory(root)) {
-            throw new IllegalArgumentException("Path is not a directory: " + root);
+        if (!Files.exists(root) || !Files.isDirectory(root)) {
+            throw new IllegalArgumentException("Invalid path: " + root);
         }
 
-        try (Stream<Path> stream = Files.walk(root)) {
-            Set<String> excludedNames = Set.of("App.java", "PickQuestion.java");
+        Map<String, List<String>> result = new LinkedHashMap<>();
 
-            return stream
-                    .filter(Files::isRegularFile)
-                    .filter(p -> !excludedNames.contains(p.getFileName().toString()))
-                    .map(p -> p.getFileName().toString())
+        try {
+            List<Path> topics = Files.list(root)
+                    .filter(Files::isDirectory)
+                    .sorted()
                     .collect(Collectors.toList());
+
+            for (Path topic : topics) {
+                List<String> files = Files.list(topic)
+                        .filter(Files::isRegularFile)
+                        .filter(p -> p.toString().endsWith(".java"))
+                        .map(p -> p.getFileName().toString())
+                        .collect(Collectors.toList());
+
+                if (files.isEmpty()) continue;
+
+                int pickCount = pickCount(files.size());
+                Collections.shuffle(files, ThreadLocalRandom.current());
+                List<String> picked = new ArrayList<>(files.subList(0, Math.min(pickCount, files.size())));
+
+                result.put(topic.getFileName().toString(), picked);
+            }
         } catch (IOException e) {
             throw new RuntimeException("Failed to walk directory: " + root, e);
         }
+
+        for (Map.Entry<String, List<String>> entry : result.entrySet()) {
+            System.out.println("- " + entry.getKey());
+            for (String file : entry.getValue()) {
+                System.out.println("    - " + file);
+            }
+        }
+
+        return result;
+    }
+
+    private int pickCount(int total) {
+        if (total <= 1) return 1;
+        if (total > 20) return 4;
+        if (total >= 15) return 3;
+        return 2;
     }
 }

@@ -2,6 +2,7 @@ package org.example.app;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.example.app.arrayOrString.Medium134;
 import org.junit.jupiter.api.Test;
 
 public class TestM134 {
@@ -34,8 +35,8 @@ public class TestM134 {
 
     @Test
     public void case4() {
-        int[] gas = new int[] { 3,1,1 };
-        int[] cost = new int[] { 1,2,2 };
+        int[] gas = new int[] { 3, 1, 1 };
+        int[] cost = new int[] { 1, 2, 2 };
         Medium134 inst = new Medium134();
         int res = inst.canCompleteCircuit(gas, cost);
         assertEquals(0, res);

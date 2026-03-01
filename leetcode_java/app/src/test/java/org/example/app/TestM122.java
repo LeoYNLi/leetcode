@@ -2,6 +2,7 @@ package org.example.app;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.example.app.arrayOrString.Medium122;
 import org.junit.jupiter.api.Test;
 
 public class TestM122 {
@@ -32,7 +33,7 @@ public class TestM122 {
     @Test
     void case4() {
         Medium122 inst = new Medium122();
-        int[] prices = { 1,2 };
+        int[] prices = { 1, 2 };
         int k = inst.maxProfit(prices);
         assertEquals(1, k);
     }

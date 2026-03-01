@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+import org.example.app.arrayOrString.Medium347;
+
 class TestM47 {
     @Test
     void testM347_case1() {

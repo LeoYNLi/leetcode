@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Arrays;
 import java.util.List;
 
-import org.example.app.metrics.Medium54;
+import org.example.app.matrix.Medium54;
 import org.junit.jupiter.api.Test;
 
 public class TestM54 {

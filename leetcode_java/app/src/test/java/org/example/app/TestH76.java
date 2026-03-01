@@ -2,6 +2,7 @@ package org.example.app;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.example.app.slidingWindow.Hard76;
 import org.junit.jupiter.api.Test;
 
 public class TestH76 {

@@ -2,6 +2,7 @@ package org.example.app;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
+import org.example.app.arrayOrString.Easy88;
 import org.junit.jupiter.api.Test;
 
 public class TestE88 {

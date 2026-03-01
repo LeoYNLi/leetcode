@@ -6,6 +6,6 @@ package org.example.app;
 public class App {
     public static void main(String[] args) {
         PickQuestion pq = new PickQuestion();
-        pq.pickQuestion(5);
+        pq.pickQuestion();
     }
 }
