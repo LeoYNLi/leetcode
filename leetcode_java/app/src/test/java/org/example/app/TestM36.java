@@ -2,7 +2,7 @@ package org.example.app;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.example.app.arrayOrString.Medium36;
+import org.example.app.matrix.Medium36;
 import org.junit.jupiter.api.Test;
 
 public class TestM36 {
